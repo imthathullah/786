@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="786 : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>786</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/imthathullah/786">View on GitHub</a>
+
+          <h1 id="project_title">786</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/imthathullah/786/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/imthathullah/786/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>&lt;!DOCTYPE html&gt;
+
+    </p>
+        
+         
+         
+        Blueprint: Nested Accordion
+        
+        
+        
+        
+        /* General Demo Style */
+@import url(&lt;a href="http://fonts.googleapis.com/css?family=Lato:300,400,700"&gt;http://fonts.googleapis.com/css?family=Lato:300,400,700&lt;/a&gt;);&lt;/p&gt;
+
+&lt;p&gt;@font-face {
+    font-family: &amp;#39;fontawesome&amp;#39;;
+    src:url(&amp;#39;../fonts/fontawesome.eot&amp;#39;);
+    src:url(&amp;#39;../fonts/fontawesome.eot?#iefix&amp;#39;) format(&amp;#39;embedded-opentype&amp;#39;),
+        url(&amp;#39;../fonts/fontawesome.svg#fontawesome&amp;#39;) format(&amp;#39;svg&amp;#39;),
+        url(&amp;#39;../fonts/fontawesome.woff&amp;#39;) format(&amp;#39;woff&amp;#39;),
+        url(&amp;#39;../fonts/fontawesome.ttf&amp;#39;) format(&amp;#39;truetype&amp;#39;);
+    font-weight: normal;
+    font-style: normal;
+}&lt;/p&gt;
+
+&lt;p&gt;body, html { font-size: 100%;   padding: 0; margin: 0;}&lt;/p&gt;
+
+&lt;p&gt;/* Reset */
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}&lt;/p&gt;
+
+&lt;p&gt;/* Clearfix hack by Nicolas Gallagher: &lt;a href="http://nicolasgallagher.com/micro-clearfix-hack/"&gt;http://nicolasgallagher.com/micro-clearfix-hack/&lt;/a&gt; */
+.clearfix:before,
+.clearfix:after {
+    content: &amp;quot; &amp;quot;;
+    display: table;
+}&lt;/p&gt;
+
+&lt;p&gt;.clearfix:after {
+    clear: both;
+}&lt;/p&gt;
+
+&lt;p&gt;body {
+    font-family: &amp;#39;Lato&amp;#39;, Calibri, Arial, sans-serif;
+    color: #47a3da;&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;a {
+    color: #f0f0f0;
+    text-decoration: none;
+}&lt;/p&gt;
+
+&lt;p&gt;a:hover {
+    color: #000;
+}&lt;/p&gt;
+
+&lt;p&gt;.main,
+.container &amp;gt; header {
+    width: 90%;
+    max-width: 70em;
+    margin: 0 auto;
+    padding: 0 1.875em 3.125em 1.875em;
+}&lt;/p&gt;
+
+&lt;p&gt;.container &amp;gt; header {
+    padding: 2.875em 1.875em 1.875em;
+}&lt;/p&gt;
+
+&lt;p&gt;.container &amp;gt; header h1 {
+    font-size: 2.125em;
+    line-height: 1.3;
+    margin: 0;
+    float: left;
+    font-weight: 400;
+}&lt;/p&gt;
+
+&lt;p&gt;.container &amp;gt; header span {
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    padding: 0 0 0.6em 0.1em;
+}&lt;/p&gt;
+
+&lt;p&gt;.container &amp;gt; header nav {
+    float: right;
+}&lt;/p&gt;
+
+&lt;p&gt;.container &amp;gt; header nav a {
+    display: block;
+    float: left;
+    position: relative;
+    width: 2.5em;
+    height: 2.5em;
+    background: #fff;
+    border-radius: 50%;
+    color: transparent;
+    margin: 0 0.1em;
+    border: 4px solid #47a3da;
+    text-indent: -8000px;
+}&lt;/p&gt;
+
+&lt;p&gt;.container &amp;gt; header nav a:after {
+    content: attr(data-info);
+    color: #47a3da;
+    position: absolute;
+    width: 600%;
+    top: 120%;
+    text-align: right;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+}&lt;/p&gt;
+
+&lt;p&gt;.container &amp;gt; header nav a:hover:after {
+    opacity: 1;
+}&lt;/p&gt;
+
+&lt;p&gt;.container &amp;gt; header nav a:hover {
+    background: #47a3da;
+}&lt;/p&gt;
+
+&lt;p&gt;.icon-drop:before, 
+.icon-arrow-left:before {
+    font-family: &amp;#39;fontawesome&amp;#39;;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 2;
+    text-align: center;
+    color: #47a3da;
+    -webkit-font-smoothing: antialiased;
+    text-indent: 8000px;
+    padding-left: 8px;
+}&lt;/p&gt;
+
+&lt;p&gt;.container &amp;gt; header nav a:hover:before {
+    color: #fff;
+}&lt;/p&gt;
+
+&lt;p&gt;.icon-drop:before {
+    content: &amp;quot;\e000&amp;quot;;
+}&lt;/p&gt;
+
+&lt;p&gt;.icon-arrow-left:before {
+    content: &amp;quot;\f060&amp;quot;;
+}&lt;/p&gt;
+
+&lt;p&gt;
+        
+
+&lt;pre&gt;&lt;code&gt;    /* Icon font for arrow icons */
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;@font-face {
+    font-family: &amp;#39;icomoon&amp;#39;;
+    src:url(&amp;#39;../fonts/icomoon_arrows/icomoon.eot&amp;#39;);
+    src:url(&amp;#39;../fonts/icomoon_arrows/icomoon.eot?#iefix&amp;#39;) format(&amp;#39;embedded-opentype&amp;#39;),
+        url(&amp;#39;../fonts/icomoon_arrows/icomoon.woff&amp;#39;) format(&amp;#39;woff&amp;#39;),
+        url(&amp;#39;../fonts/icomoon_arrows/icomoon.ttf&amp;#39;) format(&amp;#39;truetype&amp;#39;),
+        url(&amp;#39;../fonts/icomoon_arrows/icomoon.svg#icomoon&amp;#39;) format(&amp;#39;svg&amp;#39;);
+    font-weight: normal;
+    font-style: normal;
+} /* Iconfont by Icomoon &lt;a href="http://icomoon.io/"&gt;http://icomoon.io/&lt;/a&gt; */&lt;/p&gt;
+
+&lt;p&gt;/* Accordion style */
+.cbp-ntaccordion {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}&lt;/p&gt;
+
+&lt;p&gt;.cbp-ntsubaccordion {
+    list-style: none;
+}&lt;/p&gt;
+
+&lt;p&gt;.cbp-ntaccordion .cbp-nttrigger {
+    cursor: pointer;
+} &lt;/p&gt;
+
+&lt;p&gt;.cbp-ntaccordion h3 {
+    margin: 0 0 0.3em;
+    padding: 1em 0 0.5em;
+    border-bottom: 1px solid #ddd;
+    font-size: 2.75em;
+    font-weight: 300;
+}&lt;/p&gt;
+
+&lt;p&gt;.cbp-ntaccordion h4 {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    padding: 0.5em 0 0.5em;
+    margin: 0 0 0.5em;
+}&lt;/p&gt;
+
+&lt;p&gt;.cbp-ntaccordion h5 {
+    font-size: 1.2em;
+    color: #aaa;
+    padding: 0.5em 0 0.5em;
+    margin: 0 0 0.5em;
+}&lt;/p&gt;
+
+&lt;p&gt;.cbp-ntaccordion .cbp-ntcontent p {
+    color: #888;
+    font-size: 1.25em;
+    font-weight: 300;
+    line-height: 1.5;
+    padding: 0.2em 0 1.5em;
+    margin: 0;
+}&lt;/p&gt;
+
+&lt;p&gt;/* Arrow icons */
+.cbp-ntaccordion &amp;gt; li &amp;gt; .cbp-nttrigger:before,
+.cbp-ntsubaccordion &amp;gt; li &amp;gt; .cbp-nttrigger:before {
+    font-family: &amp;#39;icomoon&amp;#39;;
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    color: #ddd;
+    margin-right: 0.5em;
+    -webkit-font-smoothing: antialiased;
+}&lt;/p&gt;
+
+&lt;p&gt;.cbp-ntaccordion &amp;gt; li &amp;gt; .cbp-nttrigger:before {
+    font-size: 75%;
+}&lt;/p&gt;
+
+&lt;p&gt;.cbp-ntaccordion &amp;gt; li &amp;gt; .cbp-nttrigger:before {
+    content: &amp;quot;\36&amp;quot;;
+}
+.cbp-ntaccordion &amp;gt; li &amp;gt; .cbp-nttrigger:hover:before {
+    content: &amp;quot;\35&amp;quot;;
+    color: inherit;
+}
+.cbp-ntaccordion &amp;gt; li.cbp-ntopen &amp;gt; .cbp-nttrigger:before,
+.no-js .cbp-ntaccordion &amp;gt; li &amp;gt; .cbp-nttrigger:before {
+    content: &amp;quot;\34&amp;quot;;
+    color: inherit;
+}&lt;/p&gt;
+
+&lt;p&gt;.cbp-ntsubaccordion &amp;gt; li &amp;gt; .cbp-nttrigger:before {
+    content: &amp;quot;\32&amp;quot;;
+}
+.cbp-ntsubaccordion &amp;gt; li &amp;gt; .cbp-nttrigger:hover:before {
+    content: &amp;quot;\33&amp;quot;;
+    color: inherit;
+}
+.cbp-ntsubaccordion &amp;gt; li.cbp-ntopen &amp;gt; .cbp-nttrigger:before,
+.no-js .cbp-ntsubaccordion &amp;gt; li &amp;gt; .cbp-nttrigger:before {
+    content: &amp;quot;\31&amp;quot;;
+    color: inherit;
+}&lt;/p&gt;
+
+&lt;p&gt;/* Initial height is zero */
+.cbp-ntaccordion .cbp-ntcontent {
+    height: 0;
+    overflow: hidden;
+}&lt;/p&gt;
+
+&lt;p&gt;/* When open, set height to auto */
+.cbp-ntaccordion .cbp-ntopen &amp;gt; .cbp-ntcontent,
+.cbp-ntsubaccordion .cbp-ntopen &amp;gt; .cbp-ntcontent,
+.no-js .cbp-ntaccordion .cbp-ntcontent {
+    height: auto;
+}&lt;/p&gt;
+
+&lt;p&gt;/* Example for media query */
+@media screen and (max-width: 32em) { &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.cbp-ntaccordion {
+    font-size: 70%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+        
+        
+        
+
+
+    <div>
+         
+            Blueprint
+            <h1>
+<a id="nested-accordion" class="anchor" href="#nested-accordion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nested Accordion</h1>
+             
+                <a href="http://tympanus.net/Blueprints/VerticalIconMenu/">Previous Blueprint</a>
+                <a href="http://tympanus.net/codrops/?p=14588">back to the Codrops article</a>
+             
+         <br>
+        <div>
+            <ul id="cbp-ntaccordion">
+                <li>
+                    <h3>
+<a id="oat-cake-tootsie-roll" class="anchor" href="#oat-cake-tootsie-roll" aria-hidden="true"><span class="octicon octicon-link"></span></a>Oat cake tootsie roll</h3>
+                    <div>
+                        <p>Jelly sweet roll dragée gummies. Jelly-o cotton candy gingerbread. Dessert tart bear claw gummi bears I love oat cake cotton candy sesame snaps carrot cake. Croissant marshmallow tiramisu icing soufflé chocolate cake. I love pie icing. Sweet I love sweet roll cheesecake dessert. Tiramisu gingerbread I love. Muffin chocolate cake powder cheesecake oat cake tootsie roll candy soufflé. Brownie toffee powder tiramisu. Wafer I love jujubes croissant. Chocolate cake candy jujubes tootsie roll bonbon toffee I love. Topping candy jelly-o. Halvah faworki I love I love toffee pastry icing chupa chups. Pie gingerbread candy canes oat cake.</p>
+                        <ul>
+                            <li>
+                                <h4>
+<a id="donut-pastry" class="anchor" href="#donut-pastry" aria-hidden="true"><span class="octicon octicon-link"></span></a>Donut pastry</h4>
+                                <div>
+                                    <p>Gingerbread cotton candy halvah gingerbread. Apple pie wypas liquorice I love chocolate cake I love. Jelly cotton candy wypas lemon drops. Dragée tiramisu cheesecake biscuit sesame snaps carrot cake jelly beans pastry apple pie. Chocolate cake cotton candy candy canes brownie ice cream. Muffin chocolate cake jelly-o cake pudding. Jujubes I love cookie. I love cupcake I love bear claw sweet croissant. Wypas bonbon chocolate cake bonbon bear claw gummies. Liquorice danish jelly tootsie roll. I love danish icing lemon drops dessert pie jujubes. Fruitcake wafer I love biscuit. Donut pastry apple pie sugar plum soufflé ice cream tart bonbon candy.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <h4>
+<a id="carrot-cake" class="anchor" href="#carrot-cake" aria-hidden="true"><span class="octicon octicon-link"></span></a>Carrot cake</h4>
+                                <div>
+                                    <p>Wafer muffin cupcake apple pie tootsie roll I love. Carrot cake apple pie I love dessert. I love carrot cake lollipop jelly jelly-o brownie cake. Croissant brownie donut gingerbread dessert icing. Sugar plum jelly candy pudding liquorice liquorice cotton candy pie. Powder sesame snaps I love chocolate bar bonbon. Pudding gummi bears donut applicake carrot cake I love I love icing cake.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <h4>
+<a id="tootsie-roll-marshmallow" class="anchor" href="#tootsie-roll-marshmallow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tootsie roll marshmallow</h4>
+                                <div>
+                                    <p>I love tootsie roll marshmallow. Halvah jelly bear claw lemon drops lollipop. Brownie tiramisu I love I love halvah wafer. Powder jelly beans sesame snaps. Powder biscuit I love wypas soufflé apple pie marzipan. Cheesecake apple pie halvah croissant jelly I love.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <h3>
+<a id="cream-gummi-bears" class="anchor" href="#cream-gummi-bears" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cream gummi bears</h3>
+                    <div>
+                        <p>Cotton candy chocolate cake macaroon applicake I love. Tart soufflé I love powder. I love tiramisu lollipop pie. Pudding gummi bears sweet. Candy chocolate I love jujubes pie donut. Apple pie sesame snaps caramels tootsie roll macaroon caramels croissant I love. Sweet roll chocolate lemon drops. I love I love muffin gummi bears I love cotton candy.</p>
+                        <ul>
+                            <li>
+                                <h4>
+<a id="cookie-ice-cream" class="anchor" href="#cookie-ice-cream" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cookie ice cream</h4>
+                                <div>
+                                    <p>Liquorice jelly-o oat cake gingerbread chocolate caramels chupa chups muffin candy. I love dessert biscuit halvah lemon drops. Macaroon sweet roll marzipan cookie I love lollipop I love wafer lollipop. Caramels candy pudding brownie. Oat cake cake gingerbread bear claw croissant dessert. Lemon drops oat cake sugar plum wypas cupcake fruitcake liquorice. Muffin wafer tootsie roll caramels. I love brownie powder icing marzipan dragée. Pie fruitcake soufflé sweet roll faworki candy canes I love. Jelly-o carrot cake donut cheesecake.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <h4>
+<a id="biscuit-chupa-chups-tart" class="anchor" href="#biscuit-chupa-chups-tart" aria-hidden="true"><span class="octicon octicon-link"></span></a>Biscuit chupa chups tart</h4>
+                                <div>
+                                    <p>Sweet muffin fruitcake. Marshmallow dessert gummies dragée. Dragée pudding caramels toffee I love I love. Pie candy canes soufflé candy jelly-o marshmallow marshmallow. Biscuit danish jelly beans lollipop sweet sesame snaps oat cake. I love chupa chups cake ice cream ice cream applicake tart. Dessert muffin chocolate bar.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <h4>
+<a id="chocolate-tart-macaroon" class="anchor" href="#chocolate-tart-macaroon" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chocolate tart macaroon</h4>
+                                <div>
+                                    <p>Faworki oat cake cotton candy cookie ice cream gummi bears. Ice cream bear claw icing macaroon apple pie caramels. Sugar plum applicake candy canes sesame snaps I love. Sugar plum brownie biscuit tiramisu marzipan. Ice cream I love sweet bear claw I love sweet cake tart. Danish marshmallow I love wypas pastry. Chocolate tart macaroon wypas sesame snaps apple pie chocolate sesame snaps. Cotton candy sweet roll pudding oat cake I love marzipan wafer chocolate cake.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <h4>
+<a id="lollipop-liquorice" class="anchor" href="#lollipop-liquorice" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lollipop liquorice</h4>
+                                <div>
+                                    <p>Cookie ice cream sweet I love cupcake. Fruitcake topping wafer. Lollipop liquorice I love tart wypas biscuit. Danish jelly-o gingerbread. Faworki jelly pastry. Wypas wypas topping I love I love candy canes liquorice. I love sweet roll fruitcake dragée wafer icing bonbon.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <h3>
+<a id="jelly-marzipan-sugar-plum" class="anchor" href="#jelly-marzipan-sugar-plum" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jelly marzipan sugar plum</h3>
+                    <div>
+                        <p>Jujubes bonbon oat cake. Cookie cookie liquorice bear claw pudding jelly-o. Sugar plum oat cake cookie. Sweet pudding tiramisu. Donut bear claw marshmallow tootsie roll I love lollipop icing. Candy chocolate bar biscuit cake tart candy donut. Carrot cake tiramisu carrot cake I love chocolate cake cake pastry carrot cake faworki. Jujubes marzipan carrot cake lemon drops dragée cake fruitcake macaroon dessert. Cotton candy I love icing powder. Gummies marzipan biscuit I love I love pudding.</p>
+                        <ul>
+                            <li>
+                                <h4>
+<a id="toffee-soufflé-chocolate-bar" class="anchor" href="#toffee-souffl%C3%A9-chocolate-bar" aria-hidden="true"><span class="octicon octicon-link"></span></a>Toffee soufflé chocolate bar</h4>
+                                <div>
+                                    <p>Carrot cake chocolate cake cupcake pudding chocolate sweet. Dragée liquorice macaroon cookie dragée jelly beans. I love liquorice applicake cheesecake. I love jelly marzipan sugar plum bonbon. Pastry chupa chups pie jelly candy canes. Donut carrot cake ice cream pudding halvah jelly cupcake. Danish candy canes topping.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <h4>
+<a id="subtitle" class="anchor" href="#subtitle" aria-hidden="true"><span class="octicon octicon-link"></span></a>Subtitle</h4>
+                                <div>
+                                    <p>Dragée chocolate cake cake. Marshmallow toffee chocolate cake. Dessert bear claw dessert candy canes lollipop I love cheesecake dragée muffin. Oat cake cupcake chocolate cotton candy. Danish sweet oat cake. Cookie bear claw bear claw bear claw wypas candy canes icing. Candy canes powder toffee soufflé chocolate bar macaroon. Soufflé I love brownie cookie I love chupa chups. Pastry pudding icing.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <h4>
+<a id="pie-wafer-brownie" class="anchor" href="#pie-wafer-brownie" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pie wafer brownie</h4>
+                                <div>
+                                    <p>Macaroon I love faworki halvah lollipop croissant chocolate cake lemon drops cheesecake. Croissant cookie halvah tiramisu powder tootsie roll applicake lemon drops. Ice cream jelly powder I love candy canes biscuit gingerbread jelly I love. Sugar plum marshmallow marzipan bear claw cookie. Jelly-o I love cake danish I love. Wypas donut dessert. I love carrot cake oat cake I love I love lollipop donut. Pie wafer brownie. Cake toffee marshmallow I love I love jelly-o.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <h3>
+<a id="danish-soufflé" class="anchor" href="#danish-souffl%C3%A9" aria-hidden="true"><span class="octicon octicon-link"></span></a>Danish soufflé</h3>
+                    <div>
+                        <p>Lemon drops ice cream I love danish soufflé cake jelly cupcake. Bear claw I love I love tart I love liquorice bear claw. Halvah chocolate gummi bears jelly-o jelly-o lollipop lemon drops liquorice. Candy canes tiramisu candy faworki apple pie. Chocolate jujubes sesame snaps ice cream cupcake. Halvah topping chupa chups biscuit. I love I love chupa chups tootsie roll marshmallow tart gummi bears chocolate.</p>
+                        <ul>
+                            <li>
+                                <h4>
+<a id="biscuit-bear-claw-bear-claw" class="anchor" href="#biscuit-bear-claw-bear-claw" aria-hidden="true"><span class="octicon octicon-link"></span></a>Biscuit bear claw bear claw</h4>
+                                <div>
+                                    <p>Halvah I love jelly beans. Danish I love jelly beans sweet roll tart biscuit. Lemon drops wypas toffee candy canes lemon drops dragée. Sweet roll I love bonbon I love. Liquorice chocolate bar lollipop faworki lollipop sugar plum. Soufflé croissant lemon drops cotton candy. Jelly candy canes cupcake halvah macaroon.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <h4>
+<a id="jujubes-bear-claw-topping-applecake" class="anchor" href="#jujubes-bear-claw-topping-applecake" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jujubes bear claw topping applecake</h4>
+                                <div>
+                                    <p>Pastry ice cream pie marshmallow muffin gingerbread. Bonbon wafer sweet roll candy lollipop. Sugar plum jujubes sweet roll donut gummi bears chupa chups ice cream. Icing I love apple pie lemon drops faworki sugar plum sweet roll. Marshmallow liquorice cotton candy jujubes chocolate bar fruitcake topping carrot cake. Chocolate croissant cupcake macaroon pastry gummi bears jelly beans. Oat cake bear claw lollipop chocolate cake. Ice cream danish faworki dragée I love chupa chups cotton candy I love. Cookie gummi bears oat cake faworki powder. Wypas jelly bonbon tiramisu apple pie jelly beans.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <h3>
+<a id="jujubes-bear-claw-topping" class="anchor" href="#jujubes-bear-claw-topping" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jujubes bear claw topping</h3>
+                    <div>
+                        <p>Cotton candy chocolate cake macaroon applicake I love. Tart soufflé I love powder. I love tiramisu lollipop pie. Pudding gummi bears sweet. Candy chocolate I love jujubes pie donut. Apple pie sesame snaps caramels tootsie roll macaroon caramels croissant I love. Sweet roll chocolate lemon drops. I love I love muffin gummi bears I love cotton candy.</p>
+                        <ul>
+                            <li>
+                                <h4>
+<a id="faworki-jelly-pastry" class="anchor" href="#faworki-jelly-pastry" aria-hidden="true"><span class="octicon octicon-link"></span></a>Faworki jelly pastry</h4>
+                                <div>
+                                    <p>Liquorice jelly-o oat cake gingerbread chocolate caramels chupa chups muffin candy. I love dessert biscuit halvah lemon drops. Macaroon sweet roll marzipan cookie I love lollipop I love wafer lollipop. Caramels candy pudding brownie. Oat cake cake gingerbread bear claw croissant dessert. Lemon drops oat cake sugar plum wypas cupcake fruitcake liquorice. Muffin wafer tootsie roll caramels. I love brownie powder icing marzipan dragée. Pie fruitcake soufflé sweet roll faworki candy canes I love. Jelly-o carrot cake donut cheesecake.</p>
+                                    <ul>
+                                        <li>
+                                            <h5>
+<a id="donut-pastry-1" class="anchor" href="#donut-pastry-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Donut pastry</h5>
+                                            <div>
+                                                <p>Gingerbread cotton candy halvah gingerbread. Apple pie wypas liquorice I love chocolate cake I love. Jelly cotton candy wypas lemon drops. Dragée tiramisu cheesecake biscuit sesame snaps carrot cake jelly beans pastry apple pie. Chocolate cake cotton candy candy canes brownie ice cream. Muffin chocolate cake jelly-o cake pudding. Jujubes I love cookie. I love cupcake I love bear claw sweet croissant. Wypas bonbon chocolate cake bonbon bear claw gummies. Liquorice danish jelly tootsie roll. I love danish icing lemon drops dessert pie jujubes. Fruitcake wafer I love biscuit. Donut pastry apple pie sugar plum soufflé ice cream tart bonbon candy.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h5>
+<a id="carrot-cake-1" class="anchor" href="#carrot-cake-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Carrot cake</h5>
+                                            <div>
+                                                <p>Wafer muffin cupcake apple pie tootsie roll I love. Carrot cake apple pie I love dessert. I love carrot cake lollipop jelly jelly-o brownie cake. Croissant brownie donut gingerbread dessert icing. Sugar plum jelly candy pudding liquorice liquorice cotton candy pie. Powder sesame snaps I love chocolate bar bonbon. Pudding gummi bears donut applicake carrot cake I love I love icing cake.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h5>
+<a id="tootsie-roll-marshmallow-1" class="anchor" href="#tootsie-roll-marshmallow-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tootsie roll marshmallow</h5>
+                                            <div>
+                                                <p>I love tootsie roll marshmallow. Halvah jelly bear claw lemon drops lollipop. Brownie tiramisu I love I love halvah wafer. Powder jelly beans sesame snaps. Powder biscuit I love wypas soufflé apple pie marzipan. Cheesecake apple pie halvah croissant jelly I love.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <h4>
+<a id="chocolate-caramels" class="anchor" href="#chocolate-caramels" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chocolate caramels</h4>
+                                <div>
+                                    <p>Faworki oat cake cotton candy cookie ice cream gummi bears. Ice cream bear claw icing macaroon apple pie caramels. Sugar plum applicake candy canes sesame snaps I love. Sugar plum brownie biscuit tiramisu marzipan. Ice cream I love sweet bear claw I love sweet cake tart. Danish marshmallow I love wypas pastry. Chocolate tart macaroon wypas sesame snaps apple pie chocolate sesame snaps. Cotton candy sweet roll pudding oat cake I love marzipan wafer chocolate cake.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <h4>
+<a id="lollipop-liquorice-1" class="anchor" href="#lollipop-liquorice-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lollipop liquorice</h4>
+                                <div>
+                                    <p>Cookie ice cream sweet I love cupcake. Fruitcake topping wafer. Lollipop liquorice I love tart wypas biscuit. Danish jelly-o gingerbread. Faworki jelly pastry. Wypas wypas topping I love I love candy canes liquorice. I love sweet roll fruitcake dragée wafer icing bonbon.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">786 maintained by <a href="https://github.com/imthathullah">imthathullah</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
